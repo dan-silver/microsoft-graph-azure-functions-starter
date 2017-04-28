@@ -1,7 +1,3 @@
-node_modules/
-
-query-graph-scaffold/function.js
-
 appsettings.json
 secrets.js
 authHelpers.js

@@ -2,6 +2,19 @@
 
 This project contains a starting point for developers to build on the Microsoft Graph using Azure Functions.
 
+### Setup
+* Fork repo this repo to your GitHub account
+
+### Register your app
+* Visit https://apps.dev.microsoft.com/ and register a new application
+ * Enter 
+
+
+### Get started in Azure
+* Visit https://portal.azure.com and create a new 'Function App'
+
+
+
 ### Install
 * Install Node.js
 * ```npm install``` to install Node dependencies declared in package.json
