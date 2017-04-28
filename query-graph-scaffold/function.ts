@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import { GraphClient } from '../authHelpers';
 import { User } from '@microsoft/microsoft-graph-types' 
 

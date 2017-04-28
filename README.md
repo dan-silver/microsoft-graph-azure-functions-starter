@@ -13,6 +13,7 @@ This project contains a starting point for developers to build on the Microsoft 
 ### Get started in Azure
 * Visit https://portal.azure.com and create a new 'Function App'
 
+![create function app](screenshots/create-function-app.png)
 
 
 ### Install

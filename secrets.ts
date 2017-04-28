@@ -1,3 +1,5 @@
+declare let process;
+
 export const MicrosoftAppSecret = process.env["MicrosoftAppSecret"]
 
 export const MicrosoftAppID = process.env["MicrosoftAppID"]
