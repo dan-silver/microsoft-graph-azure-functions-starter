@@ -1,5 +1,5 @@
 ## Microsoft Graph and Azure Functions TypeScript Starter Project
-This project contains a starting point for developers to build on the Microsoft Graph using Azure Functions.
+This project contains a starting point for developers to deploy Microsoft Graph service apps in Azure Functions.
 
 ### Setup
 Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-functions-starter.git`
