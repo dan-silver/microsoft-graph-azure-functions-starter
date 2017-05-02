@@ -24,6 +24,12 @@ Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-
 
 * Create an Azure function app at https://portal.azure.com and create a new 'Function App'
 ![create function app](screenshots/create-function-app.png)
-* Set up deployment using Git (…)
-* Push a deployment (git …)
-* Check the logs (go to site: )
+* Configure your app to allow Git deployments
+   * Under `Platform features` select `Deployment Options` and choose 'Local Git Repository ass the source.
+* Add your Function as a git remote
+   * Under General Settings -> Properties, select your Git Url
+   * `git remote add azure YOUR_GIT_URL`
+* Push a deployment
+  * (make sure TypeScript recompiled after you updated your secrets file with npm run build)
+  * `git add .`, `git commit -m 'Azure functions first push`, `git push azure master` 
+* Check the logs and your function should be running!
