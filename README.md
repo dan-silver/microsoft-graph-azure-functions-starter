@@ -25,7 +25,7 @@ Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-
 * Create an Azure function app at https://portal.azure.com and create a new 'Function App'
 ![create function app](screenshots/create-function-app.png)
 * Configure your app to allow Git deployments
-   * Under `Platform features` select `Deployment Options` and choose 'Local Git Repository as the source.
+   * Under `Platform features` select `Deployment Options` and choose `Local Git Repository` as the source.
 * Add your Function as a git remote
    * Under General Settings -> Properties, select your Git Url
    * `git remote add azure YOUR_GIT_URL`
