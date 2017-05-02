@@ -3,23 +3,21 @@
 This project contains a starting point for developers to build on the Microsoft Graph using Azure Functions.
 
 ### Setup
-* Fork repo this repo to your GitHub account
+* Create an Azure function app at https://portal.azure.com and create a new 'Function App'
 
-### Register your app
-* Visit https://apps.dev.microsoft.com/ and register a new application
- * Enter 
-
-
-### Get started in Azure
-* Visit https://portal.azure.com and create a new 'Function App'
 
 ![create function app](screenshots/create-function-app.png)
 
+* Register your application at https://apps.dev.microsoft.com/
+* Set up deployment using Git (…)
+* Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-functions-starter.git`
+  * Install Node.js
+  * ```npm install``` to install project dependencies
+  * ``` tsc -w ``` to start TypeScript compiler and watch for changes
+* Push a deployment (git …)
+* Check the logs (go to site: )
 
 ### Install
-* Install Node.js
-* ```npm install``` to install Node dependencies declared in package.json
-* ``` tsc -w ``` to start TypeScript compiler and watch for changes
 * Obtain an App ID, App Secret and refresh token and update appsettings.json (Windows) for local testing or Azure app settings.
 
 
@@ -29,9 +27,3 @@ https://www.npmjs.com/package/azure-functions-cli
 * Enter secrets in appsettings.json (copy from example at `appsettings.example.json`). This is an easy way to setup environmental variables without modifying system settings.
 * ```npm i -g azure-functions-cli```
 * ``` func host start```
-
-
-### Deploying to Azure
-* Create a GitHub repository for your project and push code
-* Authorize Azure to access your GitHub account if you haven't already
-* Create an Azure Functions app from source control
