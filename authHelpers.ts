@@ -1,23 +1,20 @@
-import { MicrosoftAppRefreshToken, MicrosoftAppSecret, MicrosoftAppID } from './secrets'
+import { MicrosoftAppSecret, MicrosoftAppID, TenantDomain } from './secrets'
 import { Client } from '@microsoft/microsoft-graph-client'
 
 import fetch from 'node-fetch';
-import {Headers} from 'node-fetch';
 
 export async function getAccessToken() {
     let body = {
         client_id: MicrosoftAppID,
-        scope: "openid profile User.ReadWrite User.ReadBasic.All Mail.ReadWrite Mail.Send Mail.Send.Shared Calendars.ReadWrite Calendars.ReadWrite.Shared Contacts.ReadWrite Contacts.ReadWrite.Shared MailboxSettings.ReadWrite Files.ReadWrite Files.ReadWrite.All Notes.Create Notes.ReadWrite.All People.Read Sites.ReadWrite.All Tasks.ReadWrite",
-        redirect_uri: "http://localhost:7071",
-        grant_type: "refresh_token",
-        client_secret: MicrosoftAppSecret,
-        refresh_token: MicrosoftAppRefreshToken
+        grant_type: 'client_credentials',
+        resource: 'https://graph.microsoft.com',
+        client_secret: MicrosoftAppSecret
     };
 
     let options:any = {
         method: "POST",
         headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
         }
     };
 
@@ -27,10 +24,14 @@ export async function getAccessToken() {
 
     options.body = searchParams;
 
-    return fetch("https://login.microsoftonline.com/common/oauth2/v2.0/token", options).then((rawResponse) => {
+    return fetch(`https://login.windows.net/${TenantDomain}/oauth2/token`, options).then((rawResponse) => {
         return rawResponse.json()
     }).then((json) => {
-        return json["access_token"]
+        console.log(json);
+        return json["access_token"];
+    }).catch((e) => {
+        debugger;
+        console.log(e);
     })
 }
 

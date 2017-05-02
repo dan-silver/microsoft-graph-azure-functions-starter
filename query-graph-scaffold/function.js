@@ -29,8 +29,6 @@ function getEmails() {
         const client = yield authHelpers_1.GraphClient();
         return client
             .api("/users")
-            .select("mail")
-            .top(10)
             .get()
             .then((res) => {
             let users = res.value;
@@ -38,3 +36,4 @@ function getEmails() {
         });
     });
 }
+//# sourceMappingURL=function.js.map

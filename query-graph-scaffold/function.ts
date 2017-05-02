@@ -19,8 +19,6 @@ async function getEmails() {
 
     return client
         .api("/users")
-        .select("mail")
-        .top(10)
         .get()
         .then((res) => {
             let users:User[] = res.value;

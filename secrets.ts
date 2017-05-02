@@ -1,11 +1,7 @@
-declare let process;
+// Register your app at https://apps.dev.microsoft.com
 
-export const MicrosoftAppSecret = process.env["MicrosoftAppSecret"]
+export const MicrosoftAppID = "";
 
-export const MicrosoftAppID = process.env["MicrosoftAppID"]
+export const MicrosoftAppSecret = ""; // Click 'Generate new password'
 
-export const MicrosoftAppRefreshToken = process.env["MicrosoftAppRefreshToken"]
-
-// openid profile User.ReadWrite User.ReadBasic.All Mail.ReadWrite Mail.Send Mail.Send.Shared Calendars.ReadWrite Calendars.ReadWrite.Shared Contacts.ReadWrite Contacts.ReadWrite.Shared MailboxSettings.ReadWrite Files.ReadWrite Files.ReadWrite.All Notes.Create Notes.ReadWrite.All People.Read Sites.ReadWrite.All Tasks.ReadWrite
-
-// http://localhost:7071
+export const TenantDomain = ""; // possibly something like MOD127192.onmicrosoft.com

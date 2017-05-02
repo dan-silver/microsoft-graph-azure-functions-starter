@@ -15,11 +15,9 @@ function getAccessToken() {
     return __awaiter(this, void 0, void 0, function* () {
         let body = {
             client_id: secrets_1.MicrosoftAppID,
-            scope: "openid profile User.ReadWrite User.ReadBasic.All Mail.ReadWrite Mail.Send Mail.Send.Shared Calendars.ReadWrite Calendars.ReadWrite.Shared Contacts.ReadWrite Contacts.ReadWrite.Shared MailboxSettings.ReadWrite Files.ReadWrite Files.ReadWrite.All Notes.Create Notes.ReadWrite.All People.Read Sites.ReadWrite.All Tasks.ReadWrite",
-            redirect_uri: "http://localhost:7071",
-            grant_type: "refresh_token",
-            client_secret: secrets_1.MicrosoftAppSecret,
-            refresh_token: secrets_1.MicrosoftAppRefreshToken
+            grant_type: 'client_credentials',
+            resource: 'https://graph.microsoft.com',
+            client_secret: secrets_1.MicrosoftAppSecret
         };
         let options = {
             method: "POST",
@@ -31,10 +29,14 @@ function getAccessToken() {
             return encodeURIComponent(key) + '=' + encodeURIComponent(body[key]);
         }).join('&');
         options.body = searchParams;
-        return node_fetch_1.default("https://login.microsoftonline.com/common/oauth2/v2.0/token", options).then((rawResponse) => {
+        return node_fetch_1.default(`https://login.windows.net/${secrets_1.TenantDomain}/oauth2/token`, options).then((rawResponse) => {
             return rawResponse.json();
         }).then((json) => {
+            console.log(json);
             return json["access_token"];
+        }).catch((e) => {
+            debugger;
+            console.log(e);
         });
     });
 }
@@ -50,3 +52,4 @@ function GraphClient() {
     });
 }
 exports.GraphClient = GraphClient;
+//# sourceMappingURL=authHelpers.js.map
