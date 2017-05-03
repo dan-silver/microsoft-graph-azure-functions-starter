@@ -31,5 +31,6 @@ Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-
    * `git remote add azure YOUR_GIT_URL`
 * Push a deployment
   * (make sure TypeScript recompiled after you updated your secrets file with npm run build)
+  * You may need to setup credentials under `Platform Features / Code Deployment / Deployment Credentials`
   * `git add .`, `git commit -m 'Initial commit'`, `git push azure master` 
 * Check the logs and your function should be running!
