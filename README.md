@@ -4,7 +4,7 @@ This project contains a starting point for developers to deploy Microsoft Graph 
 #### 1. Setup
 Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-functions-starter.git`
 * Install Node.js
-* ```npm install``` to install project dependencies
+* ```npm install``` to install project dependencies after moving into the project directory
 * ``` npm run build ``` to start TypeScript compiler and watch for changes (leave this open in another console)
 
 #### 2. App registration
