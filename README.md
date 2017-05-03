@@ -18,7 +18,7 @@ Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-
 
 #### 3. Allow your app running as a service to access Graph
 
-* Visit `https://login.microsoftonline.com/common/adminconsent?client_id=YOUR_APP_ID&state=12345&redirect_uri=http://localhost:3000` and grant the app access. Replace `YOUR_APP_ID`
+* Visit `https://login.microsoftonline.com/common/adminconsent?client_id=YOUR_APP_ID&state=12345&redirect_uri=http://localhost:3000` and grant the app access. Replace `YOUR_APP_ID`. After granting access you will be redirected to `localhost:3000` and nothing is running there, which is expected.
 
 #### 4. Deploy to Azure Functions
 
