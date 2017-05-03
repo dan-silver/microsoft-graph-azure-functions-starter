@@ -2,7 +2,8 @@
 This project contains a starting point for developers to deploy Microsoft Graph service apps in Azure Functions.
 
 #### 1. Setup
-Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-functions-starter.git`
+* Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-functions-starter.git`
+ ![git clone link](screenshots/clone-link.PNG)
 * Install Node.js
 * ```npm install``` to install project dependencies after moving into the project directory
 * ``` npm run build ``` to start TypeScript compiler and watch for changes (leave this open in another console)
@@ -33,4 +34,9 @@ Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-
   * (make sure TypeScript recompiled after you updated your secrets file with npm run build)
   * You may need to setup credentials under `Platform Features / Code Deployment / Deployment Credentials`
   * `git add .`, `git commit -m 'Initial commit'`, `git push azure master` 
+
+#### 5. Verify deployment and run the function!
+* Since this starter project uses an HTTP triger function, you can get a URL to execute your code. Get the URL and open this in a new tab or use CURL. 
+
+![git clone link](screenshots/get-function-url.PNG)
 * Check the logs and your function should be running!
