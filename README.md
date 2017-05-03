@@ -38,5 +38,5 @@ This project contains a starting point for developers to deploy Microsoft Graph 
 #### 5. Verify deployment and run the function!
 * Since this starter project uses an HTTP triger function, you can get a URL to execute your code. Get the URL and open this in a new tab or use CURL. 
 
-![git clone link](screenshots/get-function-url.PNG)
+![get function url button](screenshots/get-function-url.png)
 * Check the logs and your function should be running!
