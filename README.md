@@ -2,7 +2,7 @@
 This project contains a starting point for developers to deploy Microsoft Graph service apps in Azure Functions.
 
 #### 1. Setup
-* Clone this repo with `git clone git@github.com:dan-silver/microsoft-graph-azure-functions-starter.git`
+* Clone this repo with 
  ![git clone link](screenshots/clone-link.PNG)
 * Install Node.js
 * ```npm install``` to install project dependencies after moving into the project directory
