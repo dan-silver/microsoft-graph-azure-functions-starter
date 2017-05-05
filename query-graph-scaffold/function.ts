@@ -1,7 +1,7 @@
 import { GraphClient } from '../authHelpers';
 import { User } from '@microsoft/microsoft-graph-types' 
 
-export async function main (context, req) {
+export async function main (context?, req?) {
     if (context) context.log("Starting Azure function!");
 
     let emails = await getEmails();

@@ -11,7 +11,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const authHelpers_1 = require("../authHelpers");
 function main(context, req) {
     return __awaiter(this, void 0, void 0, function* () {
-        context.log("Starting Azure function!");
+        if (context)
+            context.log("Starting Azure function!");
         let emails = yield getEmails();
         let response = {
             status: 200,
@@ -36,4 +37,7 @@ function getEmails() {
         });
     });
 }
+// to test this locally in Visual Studio code, uncomment the following line
+// when running in Azure functions, they'll call main() for you
+main();
 //# sourceMappingURL=function.js.map
