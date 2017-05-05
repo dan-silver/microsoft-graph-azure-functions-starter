@@ -2,7 +2,7 @@ import { GraphClient } from '../authHelpers';
 import { User } from '@microsoft/microsoft-graph-types' 
 
 export async function main (context, req) {
-    context.log("Starting Azure function!");
+    if (context) context.log("Starting Azure function!");
 
     let emails = await getEmails();
     let response = {
@@ -25,3 +25,8 @@ async function getEmails() {
             return users.map((user) => user.mail)
         });
 }
+
+// to test this locally in Visual Studio code, uncomment the following line
+// when running in Azure functions, they'll call main() for you
+
+//main()
