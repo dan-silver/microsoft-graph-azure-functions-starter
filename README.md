@@ -13,7 +13,7 @@ This project contains a starting point for developers to deploy Microsoft Graph 
 
 * Register your application at https://apps.dev.microsoft.com/
 * Add `http://localhost:3000` as a redirect URL under Platforms -> web
-* Add Application permissions (Directory.ReadWrite.All)
+* Add Application permissions (Directory.ReadWrite.All, Calendars.Read, User.ReadWrite.All, Mail.Send)
 * Update `secrets.ts` with your application id
 * Update `secrets.ts` with an app secret (click 'generate new password')
 * Update `secrets.ts` with your tenant domain like `MOD507192.onmicrosoft.com`
