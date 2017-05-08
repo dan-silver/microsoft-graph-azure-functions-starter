@@ -4,11 +4,11 @@ import { User } from '@microsoft/microsoft-graph-types'
 export async function main (context?, req?) {
     if (context) context.log("Starting Azure function!");
 
-    let emails = await getAllUsers();
+    let users = await getAllUsers();
     let response = {
         status: 200,
         body: {
-            emails
+            users
         }
     };
     return response;
@@ -29,4 +29,4 @@ async function getAllUsers() {
 // to test this locally in Visual Studio code, uncomment the following line
 // when running in Azure functions, they'll call main() for you
 
-// main()
+// main();
