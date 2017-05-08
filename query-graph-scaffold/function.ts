@@ -4,7 +4,7 @@ import { User } from '@microsoft/microsoft-graph-types'
 export async function main (context?, req?) {
     if (context) context.log("Starting Azure function!");
 
-    let emails = await getEmails();
+    let emails = await getAllUsers();
     let response = {
         status: 200,
         body: {
@@ -14,7 +14,7 @@ export async function main (context?, req?) {
     return response;
 };
 
-async function getEmails() {
+async function getAllUsers() {
     const client = await GraphClient();
 
     return client
@@ -22,11 +22,11 @@ async function getEmails() {
         .get()
         .then((res) => {
             let users:User[] = res.value;
-            return users.map((user) => user.mail)
+            return users;
         });
 }
 
 // to test this locally in Visual Studio code, uncomment the following line
 // when running in Azure functions, they'll call main() for you
 
-main()
+// main()
