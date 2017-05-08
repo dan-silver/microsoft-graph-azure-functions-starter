@@ -29,7 +29,7 @@ This project contains a starting point for developers to deploy Microsoft Graph 
 * Configure your app to allow Git deployments
    * Under `Platform features` select `Deployment Options` and choose `Local Git Repository` as the source.
 * Add your Function as a git remote
-   * Under General Settings -> Properties, select your Git Url
+   * Under `General Settings` -> `Properties`, select your `Git Url`
    * `git remote add azure YOUR_GIT_URL`
 * Push a deployment
   * (make sure TypeScript recompiled after you updated your secrets file with npm run build)
@@ -37,7 +37,7 @@ This project contains a starting point for developers to deploy Microsoft Graph 
   * `git add .`, `git commit -m 'Initial commit'`, `git push azure master` 
 
 #### 5. Verify deployment and run the function!
-* Since this starter project uses an HTTP triger function, you can get a URL to execute your code. Click `Get function URL`, and open in a new tab.
+* Since this starter project uses an HTTP trigger function, you can get a URL to execute your code. Click `Get function URL`, and open in a new tab.
 
 ![get function url button](screenshots/get-function-url.png)
 
