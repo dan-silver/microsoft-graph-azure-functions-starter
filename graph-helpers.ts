@@ -108,11 +108,12 @@ export async function queryNumberCalendarEvents(user:User) {
         })
         .get()
         .then((res) => {
-            return res;
+            return res.value.length;
         })
         .catch((e) => {
+            console.log(e);
             debugger;
-            return 0;
+            return -1;
         })
 }
 

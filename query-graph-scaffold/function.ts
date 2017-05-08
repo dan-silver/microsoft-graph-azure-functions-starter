@@ -29,4 +29,4 @@ async function getEmails() {
 // to test this locally in Visual Studio code, uncomment the following line
 // when running in Azure functions, they'll call main() for you
 
-// main()
+main()
