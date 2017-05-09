@@ -27,6 +27,7 @@ This project contains a starting point for developers to deploy Microsoft Graph 
 * Create an Azure function app at https://portal.azure.com and create a new 'Function App'
 ![create function app by searching](screenshots/azure-function-search.png)
 ![create function app](screenshots/create-function-app.png)
+* You may need to setup credentials under `Platform Features / Code Deployment / Deployment Credentials`
 * Configure your app to allow Git deployments
    * Under `Platform features` select `Deployment Options` and choose `Local Git Repository` as the source.
 * Add your Function as a git remote
@@ -34,7 +35,6 @@ This project contains a starting point for developers to deploy Microsoft Graph 
    * `git remote add azure YOUR_GIT_URL`
 * Push a deployment
   * (Make sure TypeScript recompiled after you updated your secrets file with npm run build. You should be seeing messages like 'Compilation complete' when you save the .ts files.)
-  * You may need to setup credentials under `Platform Features / Code Deployment / Deployment Credentials`
   * `git add .`, `git commit -m 'Initial commit'`, `git push azure master` 
 
 #### 5. Verify deployment and run the function!
