@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const secrets_1 = require("./secrets");
 const microsoft_graph_client_1 = require("@microsoft/microsoft-graph-client");
 const node_fetch_1 = require("node-fetch");
-function getAccessToken() {
+function getAccessToken(context) {
     return __awaiter(this, void 0, void 0, function* () {
         let body = {
             client_id: secrets_1.MicrosoftAppID,
@@ -30,20 +30,25 @@ function getAccessToken() {
         }).join('&');
         options.body = searchParams;
         return node_fetch_1.default(`https://login.windows.net/${secrets_1.TenantDomain}/oauth2/token`, options).then((rawResponse) => {
+            context.log(rawResponse);
             return rawResponse.json();
         }).then((json) => {
-            console.log(json);
+            if (context)
+                context.log(json);
             return json["access_token"];
         }).catch((e) => {
             debugger;
-            console.log(e);
+            if (context)
+                context.log(e);
         });
     });
 }
 exports.getAccessToken = getAccessToken;
-function GraphClient() {
+function GraphClient(context) {
     return __awaiter(this, void 0, void 0, function* () {
-        let accessToken = yield getAccessToken();
+        let accessToken = yield getAccessToken(context);
+        if (context)
+            context.log(accessToken);
         return microsoft_graph_client_1.Client.init({
             authProvider: (done) => {
                 done(null, accessToken);

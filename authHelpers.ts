@@ -3,7 +3,7 @@ import { Client } from '@microsoft/microsoft-graph-client'
 
 import fetch from 'node-fetch';
 
-export async function getAccessToken() {
+export async function getAccessToken(context?) {
     let body = {
         client_id: MicrosoftAppID,
         grant_type: 'client_credentials',
@@ -25,18 +25,20 @@ export async function getAccessToken() {
     options.body = searchParams;
 
     return fetch(`https://login.windows.net/${TenantDomain}/oauth2/token`, options).then((rawResponse) => {
+        context.log(rawResponse);
         return rawResponse.json()
     }).then((json) => {
-        console.log(json);
+        if (context) context.log(json);
         return json["access_token"];
     }).catch((e) => {
         debugger;
-        console.log(e);
+        if (context) context.log(e);
     })
 }
 
-export async function GraphClient() {
-    let accessToken = await getAccessToken();
+export async function GraphClient(context?) {
+    let accessToken = await getAccessToken(context);
+    if (context) context.log(accessToken)
 
     return Client.init({
         authProvider: (done) => {

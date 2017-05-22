@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -w"
+    "build": "tsc && uglifyjs  .\\query-graph-scaffold\\index.js -o upload-to-azure.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/dan-silver/azure-function-samples#readme",
   "devDependencies": {
     "@microsoft/microsoft-graph-types": "^0.4.1",
-    "typescript": "^2.3.1"
+    "typescript": "^2.3.1",
+    "uglify-js-es6": "^2.8.9"
   },
   "dependencies": {
     "node-fetch": "^1.6.3",

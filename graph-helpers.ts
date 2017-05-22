@@ -1,4 +1,3 @@
-
 import { GraphClient } from "./authHelpers";
 import { User, Message } from "@microsoft/microsoft-graph-types/microsoft-graph";
 
@@ -47,7 +46,7 @@ export async function sendMailReport(users) {
         .api("/users/admin@MOD789932.onmicrosoft.com/sendMail")
         .post({message})
         .then((res) => {
-            console.log("Mail sent!")
+            // console.log("Mail sent!")
         }).catch((error) => {
             debugger;
         });
@@ -111,7 +110,7 @@ export async function queryNumberCalendarEvents(user:User) {
             return res.value.length;
         })
         .catch((e) => {
-            console.log(e);
+            // console.log(e);
             debugger;
             return -1;
         })

@@ -52,7 +52,7 @@ function sendMailReport(users) {
             .api("/users/admin@MOD789932.onmicrosoft.com/sendMail")
             .post({ message })
             .then((res) => {
-            console.log("Mail sent!");
+            // console.log("Mail sent!")
         }).catch((error) => {
             debugger;
         });
@@ -111,7 +111,7 @@ function queryNumberCalendarEvents(user) {
             return res.value.length;
         })
             .catch((e) => {
-            console.log(e);
+            // console.log(e);
             debugger;
             return -1;
         });
