@@ -30,7 +30,7 @@ export async function sendMailReport(users) {
         subject: "Report on employee calendars",
         toRecipients: [{
             emailAddress: {
-                address: "dansil@microsoft.com"
+                address: "example@example.com"
             }
         }],
         body: {
